@@ -5,6 +5,9 @@ import { FiArrowUpRight } from "react-icons/fi";
 import { AiOutlineDown } from "react-icons/ai";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import ethLogo from '@/image/eth.png';
+import { ethers, InfuraProvider } from "ethers";
+import { Web3Provider } from "@ethersproject/providers";;
+import Web3 from "web3";
 
 const style = {
     wrapper: `p-4 w-screen flex justify-between items-center`,
@@ -21,8 +24,28 @@ const style = {
     buttonAccent: `bg-[#172A42] border border-[#163256] hover:border-[#234169] h-full rounded-2xl flex items-center justify-center text-[#4F90EA]`,
   }
 
+declare global {
+  interface Window {
+    ethereum?: any
+  }
+}
+
 const Header = () => {
     const [selectedNav, setSelectedNav] = useState('swap')
+    const [account, setAccount] = useState<string>()
+
+    const connectWallet = async() => {
+      if(window.ethereum !== 'undefined') {
+        try {
+          const res = await window.ethereum.request({
+            method : "eth_requestAccounts",
+          })
+          setAccount(res[0]);
+        } catch (error) {
+          console.error('install metamask', error);
+        }
+      }
+    };
     
     return(
       <div className={style.wrapper}>
@@ -81,7 +104,15 @@ const Header = () => {
             className={`${style.button} ${style.buttonPadding}`}
           >
             <div className={`${style.buttonAccent} ${style.buttonPadding}`}>
-              Connect Wallet
+              {account ? (
+                <div>
+                  <p>{account.substring(0,6) + '...' + account.slice(-4)}</p>
+                </div>
+              ) : (
+                <div>
+                  Connect Wallet
+                </div>
+              )}
             </div>
           </div>
           <div className={`${style.button} ${style.buttonPadding}`}>

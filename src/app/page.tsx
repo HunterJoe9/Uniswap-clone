@@ -1,7 +1,8 @@
 "use client"
-import Header from "@/components/Header"
-import Main from "@/components/Main"
-import Bottom from "@/components/Bottom"
+import Header from "@/components/Header";
+import Main from "@/components/Main";
+import Bottom from "@/components/Bottom";
+import { LoginContext } from "@/components/context/LoginContext";
 
 
 export default function Home() {
