@@ -34,3 +34,8 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## My TEST UniswapV2 contract address below
+v2 Factory address : 0x73EC72C0f8dE60F23FA73285C248a043F30A92b5
+WETH address : 0xDefB1DCeDC691431C0bDfB8d94fB359449E029e3
+v2 Router02 address : 0x1Bc8E4dB5d66ce6437491dd3699212d7916751Da

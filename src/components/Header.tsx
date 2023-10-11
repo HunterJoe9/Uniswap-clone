@@ -5,9 +5,8 @@ import { FiArrowUpRight } from "react-icons/fi";
 import { AiOutlineDown } from "react-icons/ai";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import ethLogo from '@/image/eth.png';
-import { ethers, InfuraProvider } from "ethers";
-import { Web3Provider } from "@ethersproject/providers";;
-import Web3 from "web3";
+import ethers from "ethers";
+
 
 const style = {
     wrapper: `p-4 w-screen flex justify-between items-center`,
@@ -126,41 +125,4 @@ const Header = () => {
 }
 
 export default Header;
-
-{/* <header className={style.wrapper}>
-        <div className={style.headerLogo}>
-          <Image src={uniswapLogo} alt="uniswap" height={40} width={40} />
-        </div>
-        <div className={style.nav}>
-          <div className={style.navItemsContainer}>
-            <div onClick={() => setSelectedNav('swap')} className={`${style.navItem} ${selectedNav == 'swap' && style.activeNavItem}`}>
-              Swaps
-            </div>
-            <div onClick={() => setSelectedNav('pool')} className={`${style.navItem} ${selectedNav == 'swap' && style.activeNavItem}`}>
-              Pools
-            </div>
-          </div>
-        </div>
-        <div className={style.buttonsContainer}>
-          <div className={`${style.button} ${style.buttonPadding}`}>
-            <div className={style.buttonIconContainer}>
-              <Image src={ethLogo} alt="ethlogo" height={20} width={20}/>
-            </div>
-            <p>Ethereum</p>
-            <div className={style.buttonIconContainer}>
-              <AiOutlineDown/>
-            </div>
-            <div onClick={() => connectWallet()} className={`${style.button} ${style.buttonPadding}`}>
-              <div className={`${style.buttonAccent} ${style.buttonPadding}`}>
-                Connect Wallet
-              </div>
-              <div className={`${style.button} ${style.buttonPadding}`}>
-                <div  className={`${style.buttonIconContainer} mx-2`}>
-                  <HiOutlineDotsVertical/>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header> */}
 
